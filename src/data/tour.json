@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Main Entrance",
+      "panorama": {
+        "baseUrl": "/tiles/1/base.jpg",
+        "tileUrl": "/tiles/1/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "position": { "x": 100, "y": 200 },
+      "links": [
+        { "nodeId": "2", "position": { "yaw": "0deg", "pitch": "0deg" } }      ]
+    },
+    {
+      "id": "2",
+      "name": "Corridor A",
+      "panorama": {
+        "baseUrl": "/tiles/2/base.jpg",
+        "tileUrl": "/tiles/2/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "position": { "x": 200, "y": 200 },
+      "links": [
+        { "nodeId": "1", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "3", "position": { "yaw": "90deg", "pitch": "0deg" } }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Lab 101",
+      "panorama": {
+        "baseUrl": "/tiles/3/base.jpg",
+        "tileUrl": "/tiles/3/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "position": { "x": 200, "y": 100 },
+      "links": [
+        { "nodeId": "1", "position": { "yaw": "270deg", "pitch": "0deg" } },
+        { "nodeId": "2", "position": { "yaw": "180deg", "pitch": "0deg" } }
+      ]
+    }
+  ]
+}
