@@ -2,7 +2,7 @@
   "nodes": [
     {
       "id": "1",
-      "name": "Main Entrance",
+      "name": "Parking",
       "panorama": {
         "baseUrl": "/tiles/1/base.jpg",
         "tileUrl": "/tiles/1/{col}_{row}.jpg",
@@ -16,7 +16,7 @@
     },
     {
       "id": "2",
-      "name": "Corridor A",
+      "name": "Main Entrance",
       "panorama": {
         "baseUrl": "/tiles/2/base.jpg",
         "tileUrl": "/tiles/2/{col}_{row}.jpg",
@@ -24,15 +24,14 @@
         "cols": 16,
         "rows": 8
       },
-      "position": { "x": 200, "y": 200 },
       "links": [
         { "nodeId": "1", "position": { "yaw": "180deg", "pitch": "0deg" } },
-        { "nodeId": "3", "position": { "yaw": "90deg", "pitch": "0deg" } }
+        { "nodeId": "3", "position": { "yaw": "0deg", "pitch": "0deg" } }
       ]
     },
     {
       "id": "3",
-      "name": "Lab 101",
+      "name": "Corridor",
       "panorama": {
         "baseUrl": "/tiles/3/base.jpg",
         "tileUrl": "/tiles/3/{col}_{row}.jpg",
@@ -40,10 +39,40 @@
         "cols": 16,
         "rows": 8
       },
-      "position": { "x": 200, "y": 100 },
       "links": [
-        { "nodeId": "1", "position": { "yaw": "270deg", "pitch": "0deg" } },
-        { "nodeId": "2", "position": { "yaw": "180deg", "pitch": "0deg" } }
+        { "nodeId": "2", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "4", "position": { "yaw": "0deg", "pitch": "0deg" } ,"linkOffset": { "yaw": 90, "pitch": 10}}
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Corridor-2",
+      
+      "panorama": {
+        "baseUrl": "/tiles/4/base.jpg",
+        "tileUrl": "/tiles/4/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "3", "position": { "yaw": "90deg", "pitch": "0deg" } },
+        { "nodeId": "5", "position": { "yaw": "300deg", "pitch": "0deg" },"linkOffset": { "yaw": 70, "pitch": 90} }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Corridor-3",
+      
+      "panorama": {
+        "baseUrl": "/tiles/5/base.jpg",
+        "tileUrl": "/tiles/5/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "4", "position": { "yaw": "180deg", "pitch": "90deg" } }
       ]
     }
   ]

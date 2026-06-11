@@ -16,6 +16,8 @@ export default function TourViewer() {
   useEffect(() => {
     if (!containerRef.current || viewerRef.current) return
 
+    
+
     // Build nodes for VirtualTourPlugin from tour.json
     const nodes = tourData.nodes.map(node => ({
       id: node.id,
@@ -30,8 +32,10 @@ export default function TourViewer() {
         cols: node.panorama.cols,
         rows: node.panorama.rows,
       },
+      
       links: node.links,
       map: node.position,
+      
     }))
 
     viewerRef.current = new Viewer({
@@ -45,11 +49,18 @@ export default function TourViewer() {
             preload: true,
             nodes: nodes,
             startNodeId: tourData.nodes[0].id,
+            
+            
           },
         ],
         
       ],
     })
+    viewerRef.current.addEventListener('click', ({ data }) => {
+  const pos = viewerRef.current.getPosition()
+  console.log(`yaw: ${(pos.yaw * 180 / Math.PI).toFixed(1)}deg, pitch: ${(pos.pitch * 180 / Math.PI).toFixed(1)}deg`)
+})
+    
 
     return () => {
       viewerRef.current?.destroy()
