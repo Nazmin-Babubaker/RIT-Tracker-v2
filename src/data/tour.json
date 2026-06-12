@@ -41,7 +41,11 @@
       },
       "links": [
         { "nodeId": "2", "position": { "yaw": "180deg", "pitch": "0deg" } },
-        { "nodeId": "4", "position": { "yaw": "0deg", "pitch": "0deg" } ,"linkOffset": { "yaw": 90, "pitch": 10}}
+        { "nodeId": "4", "position": { "yaw": "0deg", "pitch": "0deg" } ,"linkOffset": { "yaw": 90, "pitch": 10}},
+        { "nodeId": "7", "position": { "yaw": "0deg", "pitch": "0deg" } ,"linkOffset": { "yaw": 300, "pitch": 10}},
+        { "nodeId": "24", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
       ]
     },
     {
@@ -57,13 +61,14 @@
       },
       "links": [
         { "nodeId": "3", "position": { "yaw": "90deg", "pitch": "0deg" } },
-        { "nodeId": "5", "position": { "yaw": "300deg", "pitch": "0deg" },"linkOffset": { "yaw": 70, "pitch": 90} }
+        { "nodeId": "5", "position": { "yaw": "0deg", "pitch": "0deg" } },
+         { "nodeId": "7", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": { "yaw":110, "pitch": 0} }
       ]
     },
     {
       "id": "5",
       "name": "Corridor-3",
-      
+      "northOffset":-40,
       "panorama": {
         "baseUrl": "/tiles/5/base.jpg",
         "tileUrl": "/tiles/5/{col}_{row}.jpg",
@@ -72,8 +77,248 @@
         "rows": 8
       },
       "links": [
-        { "nodeId": "4", "position": { "yaw": "180deg", "pitch": "90deg" } }
+        { "nodeId": "4", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "6", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Corridor-4",
+      "panorama": {
+        "baseUrl": "/tiles/6/base.jpg",
+        "tileUrl": "/tiles/6/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "5", "position": { "yaw": "180deg", "pitch": "0deg" } }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Corridor-5",
+      "northOffset":30,
+
+      "panorama": {
+        "baseUrl": "/tiles/7/base.jpg",
+        "tileUrl": "/tiles/7/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "4", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": { "yaw": 110, "pitch": 90} },
+        { "nodeId": "3", "position": { "yaw": "270deg", "pitch": "0deg" } },
+         { "nodeId": "8", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Corridor-6",
+
+      "panorama": {
+        "baseUrl": "/tiles/8/base.jpg",
+        "tileUrl": "/tiles/8/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "7", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "9", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+      ]
+    },
+    {
+      "id": "9",
+      "name": "stairs",
+
+      "panorama": {
+        "baseUrl": "/tiles/9/base.jpg",
+        "tileUrl": "/tiles/9/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "8", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "10", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/10/base.jpg",
+        "tileUrl": "/tiles/10/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "9", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "11", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/11/base.jpg",
+        "tileUrl": "/tiles/11/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "10", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "12", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Corridor",
+      "northOffset": 10,
+      "panorama": {
+        "baseUrl": "/tiles/12/base.jpg",
+        "tileUrl": "/tiles/12/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "11", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "13", "position": { "yaw": "0deg", "pitch": "0deg" } },
+        { "nodeId": "26", "position": { "yaw": "200deg", "pitch": "0deg" },"linkOffset":{"yaw":71 ,"pitch":0} },
+        { "nodeId": "17", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset":{"yaw":130 ,"pitch":0}  }
+
+
+
+
+
+      ]
+    },
+    {
+      "id": "13",
+      "name": "Corridor",
+      "northOffset":-15,
+      "panorama": {
+        "baseUrl": "/tiles/13/base.jpg",
+        "tileUrl": "/tiles/13/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "12", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "14", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "14",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/14/base.jpg",
+        "tileUrl": "/tiles/14/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "13", "position": { "yaw": "180deg", "pitch": "0deg" } }
+
+      ]
+    },
+    {
+      "id": "24",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/24/base.jpg",
+        "tileUrl": "/tiles/24/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "3", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "25", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "25",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/25/base.jpg",
+        "tileUrl": "/tiles/25/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "24", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "26", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "26",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/26/base.jpg",
+        "tileUrl": "/tiles/26/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "25", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "12", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+
+      ]
+    },
+    {
+      "id": "17",
+      "name": "Corridor",
+
+      "panorama": {
+        "baseUrl": "/tiles/17/base.jpg",
+        "tileUrl": "/tiles/17/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "12", "position": { "yaw": "180deg", "pitch": "0deg" } }
+
+
+
       ]
     }
+
+    
+    
+
   ]
 }
