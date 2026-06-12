@@ -32,7 +32,9 @@ export default function TourViewer() {
         cols: node.panorama.cols,
         rows: node.panorama.rows,
       },
-      
+      sphereCorrection: {
+    pan: `${node.northOffset || 0}deg`,
+  },
       links: node.links,
       map: node.position,
       
