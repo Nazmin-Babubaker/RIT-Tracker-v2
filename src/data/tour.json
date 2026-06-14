@@ -369,7 +369,42 @@
         "rows": 8
       },
       "links": [
-        { "nodeId": "19", "position": { "yaw": "180deg", "pitch": "-30deg" } }
+        { "nodeId": "19", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "21", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": {"yaw": 130,"pitch": 0} }
+
+
+
+      ]
+    },
+    {
+      "id": "21",
+      "name": "Corridor",
+      "panorama": {
+        "baseUrl": "/tiles/21/base.jpg",
+        "tileUrl": "/tiles/21/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "20", "position": { "yaw": "180deg", "pitch": "0deg" },"linkOffset":{"yaw":90,"pitch":0} },
+        { "nodeId": "22", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Corridor",
+      "panorama": {
+        "baseUrl": "/tiles/22/base.jpg",
+        "tileUrl": "/tiles/22/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "21", "position": { "yaw": "180deg", "pitch": "0deg" } }
 
 
 
