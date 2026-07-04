@@ -422,7 +422,8 @@
         "rows": 8
       },
       "links": [
-        { "nodeId": "20", "position": { "yaw": "180deg", "pitch": "0deg" } }
+        { "nodeId": "20", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "16", "position": { "yaw": "0deg", "pitch": "0deg" } }
 
 
 
@@ -433,14 +434,14 @@
       "name": "16",
       "northOffset":30,
       "panorama": {
-        "baseUrl": "/tiles/15/base.jpg",
-        "tileUrl": "/tiles/15/{col}_{row}.jpg",
+        "baseUrl": "/tiles/16/base.jpg",
+        "tileUrl": "/tiles/16/{col}_{row}.jpg",
         "width": 8704,
         "cols": 16,
         "rows": 8
       },
       "links": [
-        { "nodeId": "20", "position": { "yaw": "180deg", "pitch": "0deg" } }
+        { "nodeId": "15", "position": { "yaw": "180deg", "pitch": "0deg" } }
 
 
 
