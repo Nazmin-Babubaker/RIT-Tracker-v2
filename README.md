@@ -1,16 +1,27 @@
-# React + Vite
+# RITTracker v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive 360° virtual tour viewer — walk through a real space (parking, entrance, corridors, stairs, etc.) by clicking between linked panoramic nodes on a map, powered by [Photo Sphere Viewer](https://photo-sphere-viewer.js.org/).
 
-Currently, two official plugins are available:
+This is **v2** of RITTracker, rebuilt to fix the slow load times of the original version, and now hosted on **Cloudflare Workers**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's New in v2 (Load Time Fix)
 
-## React Compiler
+The old version loaded each panorama as a single full-resolution equirectangular image before it could render, which meant a large download (and a long wait) every time you stepped into a new node.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+v2 fixes this by switching to **tiled panoramas**:
 
-## Expanding the ESLint configuration
+- Uses `EquirectangularTilesAdapter` instead of the plain equirectangular adapter, so each panorama is split into a grid of small tiles (`cols` × `rows`) plus one small low-res `baseUrl` preview image.
+- The **base image renders instantly** while only the tiles actually in view are fetched, instead of downloading the whole 8704px-wide panorama up front.
+- `VirtualTourPlugin` is configured with `preload: true`, so neighboring nodes start fetching in the background while you're still looking at the current one — moving to the next node feels instant instead of triggering a fresh load.
+- `renderMode: '3d'` is used so transitions between nodes are handled efficiently by the plugin rather than doing a full teardown/rebuild of the viewer on every navigation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Net effect: initial paint is near-instant (small base image), full detail streams in progressively, and adjacent rooms are already warm by the time you walk into them.
+
+## Tech Stack
+
+- **React** — `TourViewer` component wraps the viewer lifecycle in a `useEffect`/`useRef` pair.
+- **[@photo-sphere-viewer/core](https://photo-sphere-viewer.js.org/)** — base 360° viewer engine.
+- **@photo-sphere-viewer/equirectangular-tiles-adapter** — tiled panorama rendering (the core of the load-time fix).
+- **@photo-sphere-viewer/virtual-tour-plugin** — links panoramas together into a navigable tour with a map.
+- **Cloudflare Workers** — hosting/deployment target for the built app.
+
