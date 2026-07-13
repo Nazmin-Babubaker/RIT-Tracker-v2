@@ -2,7 +2,7 @@
 
 An interactive 360° virtual tour viewer — walk through a real space (parking, entrance, corridors, stairs, etc.) by clicking between linked panoramic nodes on a map, powered by [Photo Sphere Viewer](https://photo-sphere-viewer.js.org/).
 
-This is **v2** of RITTracker, rebuilt to fix the slow load times of the original version, and now hosted on **Cloudflare Workers**.
+This is **v2** of RITTracker, rebuilt to fix the slow load times of the original version, and now hosted on **Cloudflare Workers**[link](https://rittracker.nza.worker.dev/).
 
 ## What's New in v2 (Load Time Fix)
 
