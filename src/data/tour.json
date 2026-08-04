@@ -320,7 +320,7 @@
     },
     {
       "id": "18",
-      "name": "Corridor",
+      "name": "18",
       "northOffset": 40,
       "panorama": {
         "baseUrl": "/tiles/18/base.jpg",
@@ -340,7 +340,7 @@
     },
     {
       "id": "19",
-      "name": "Corridor",
+      "name": "19",
       "northOffset": 90,
       "panorama": {
         "baseUrl": "/tiles/19/base.jpg",
@@ -360,7 +360,7 @@
     },
     {
       "id": "20",
-      "name": "Corridor",
+      "name": "20",
       "panorama": {
         "baseUrl": "/tiles/20/base.jpg",
         "tileUrl": "/tiles/20/{col}_{row}.jpg",
@@ -370,15 +370,15 @@
       },
       "links": [
         { "nodeId": "19", "position": { "yaw": "180deg", "pitch": "0deg" } },
-        { "nodeId": "21", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": {"yaw": 130,"pitch": 0} }
-
+        { "nodeId": "21", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": {"yaw": 130,"pitch": 0} },
+        { "nodeId": "15", "position": { "yaw": "0deg", "pitch": "0deg" },"linkOffset": {"yaw": 71,"pitch": 0}  }
 
 
       ]
     },
     {
       "id": "21",
-      "name": "Corridor",
+      "name": "21",
       "panorama": {
         "baseUrl": "/tiles/21/base.jpg",
         "tileUrl": "/tiles/21/{col}_{row}.jpg",
@@ -395,7 +395,7 @@
     },
     {
       "id": "22",
-      "name": "Corridor",
+      "name": "22",
       "panorama": {
         "baseUrl": "/tiles/22/base.jpg",
         "tileUrl": "/tiles/22/{col}_{row}.jpg",
@@ -405,6 +405,43 @@
       },
       "links": [
         { "nodeId": "21", "position": { "yaw": "180deg", "pitch": "0deg" } }
+
+
+
+      ]
+    },
+    {
+      "id": "15",
+      "name": "15",
+      "northOffset":30,
+      "panorama": {
+        "baseUrl": "/tiles/15/base.jpg",
+        "tileUrl": "/tiles/15/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "20", "position": { "yaw": "180deg", "pitch": "0deg" } },
+        { "nodeId": "16", "position": { "yaw": "0deg", "pitch": "0deg" } }
+
+
+
+      ]
+    },
+    {
+      "id": "16",
+      "name": "16",
+      "northOffset":30,
+      "panorama": {
+        "baseUrl": "/tiles/16/base.jpg",
+        "tileUrl": "/tiles/16/{col}_{row}.jpg",
+        "width": 8704,
+        "cols": 16,
+        "rows": 8
+      },
+      "links": [
+        { "nodeId": "15", "position": { "yaw": "180deg", "pitch": "0deg" } }
 
 
 
