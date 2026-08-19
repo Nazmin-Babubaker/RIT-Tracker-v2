@@ -12,11 +12,7 @@
       },
       "position": { "x": 100, "y": 200 },
       "links": [
-        { "nodeId": "2", "position": { "yaw": "0deg", "pitch": "0deg" } }      ],
-        "markers": [
-  { "id": "staffroom", "label": "Staff Room", "position": { "yaw": "45deg", "pitch": "-10deg" }, "icon": "/icons/chat.png" },
-  { "id": "classroom-12", "label": "Classroom 12", "position": { "yaw": "-60deg", "pitch": "-5deg" }, "icon": "/icons/chat.png" }
-]
+        { "nodeId": "2", "position": { "yaw": "0deg", "pitch": "0deg" } }      ]
     },
     {
       "id": "2",
@@ -31,7 +27,15 @@
       "links": [
         { "nodeId": "1", "position": { "yaw": "180deg", "pitch": "0deg" } },
         { "nodeId": "3", "position": { "yaw": "0deg", "pitch": "0deg" } }
-      ]
+      ],
+      "markers": [
+                {
+                    "id": "new-marker",
+                    "position": { "yaw": "306.7deg", "pitch": "-2.4deg" },
+                    "image": "icons/chat.png",
+                    "size": { "width": 32, "height": 32 }
+                }
+            ]
     },
     {
       "id": "3",

@@ -2,10 +2,14 @@ import { useEffect, useRef } from 'react'
 import { Viewer } from '@photo-sphere-viewer/core'
 import { EquirectangularTilesAdapter } from '@photo-sphere-viewer/equirectangular-tiles-adapter'
 import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin'
+import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin'
+
 
 import '@photo-sphere-viewer/core/index.css'
 import '@photo-sphere-viewer/virtual-tour-plugin/index.css'
 import '@photo-sphere-viewer/map-plugin/index.css'
+import '@photo-sphere-viewer/markers-plugin/index.css'
+
 
 import tourData from '../data/tour.json'
 
@@ -37,6 +41,8 @@ export default function TourViewer() {
   },
       links: node.links,
       map: node.position,
+      markers: node.markers || [],
+
       
     }))
 
@@ -44,7 +50,9 @@ export default function TourViewer() {
       container: containerRef.current,
       adapter: EquirectangularTilesAdapter,
       plugins: [
-        [
+           MarkersPlugin,
+
+        [ 
           VirtualTourPlugin,
           {
             renderMode: '3d',
