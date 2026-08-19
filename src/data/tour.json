@@ -12,7 +12,11 @@
       },
       "position": { "x": 100, "y": 200 },
       "links": [
-        { "nodeId": "2", "position": { "yaw": "0deg", "pitch": "0deg" } }      ]
+        { "nodeId": "2", "position": { "yaw": "0deg", "pitch": "0deg" } }      ],
+        "markers": [
+  { "id": "staffroom", "label": "Staff Room", "position": { "yaw": "45deg", "pitch": "-10deg" }, "icon": "/icons/chat.png" },
+  { "id": "classroom-12", "label": "Classroom 12", "position": { "yaw": "-60deg", "pitch": "-5deg" }, "icon": "/icons/chat.png" }
+]
     },
     {
       "id": "2",
