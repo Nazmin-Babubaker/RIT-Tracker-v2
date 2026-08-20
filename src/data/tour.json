@@ -33,7 +33,13 @@
                     "id": "new-marker",
                     "position": { "yaw": "306.7deg", "pitch": "-2.4deg" },
                     "image": "icons/chat.png",
-                    "size": { "width": 32, "height": 32 }
+                    "size": { "width": 32, "height": 32 },
+                    "data": {
+    "type": "reception",
+    "title": "Reception Desk",
+    "description": "Front desk — visitor sign-in and general enquiries.",
+    "contact": "reception@school.edu"
+  }
                 }
             ]
     },
