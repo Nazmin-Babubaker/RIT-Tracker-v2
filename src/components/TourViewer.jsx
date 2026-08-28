@@ -4,9 +4,12 @@ import { EquirectangularTilesAdapter } from '@photo-sphere-viewer/equirectangula
 import { VirtualTourPlugin } from '@photo-sphere-viewer/virtual-tour-plugin'
 import { MarkersPlugin } from '@photo-sphere-viewer/markers-plugin'
 
+
 import '@photo-sphere-viewer/core/index.css'
 import '@photo-sphere-viewer/virtual-tour-plugin/index.css'
+import '@photo-sphere-viewer/map-plugin/index.css'
 import '@photo-sphere-viewer/markers-plugin/index.css'
+
 
 import tourData from '../data/tour.json'
 
@@ -14,12 +17,15 @@ export default function TourViewer() {
   const containerRef = useRef(null)
   const viewerRef = useRef(null)
 
-  // NEW: whichever marker's data is currently shown in the sidebar (null = closed)
-  const [selectedInfo, setSelectedInfo] = useState(null)
+    const [selectedInfo, setSelectedInfo] = useState(null)
+
 
   useEffect(() => {
     if (!containerRef.current || viewerRef.current) return
 
+    
+
+    // Build nodes for VirtualTourPlugin from tour.json
     const nodes = tourData.nodes.map(node => ({
       id: node.id,
       caption: node.name,
@@ -34,41 +40,46 @@ export default function TourViewer() {
         rows: node.panorama.rows,
       },
       sphereCorrection: {
-        pan: `${node.northOffset || 0}deg`,
-      },
+    pan: `${node.northOffset || 0}deg`,
+  },
       links: node.links,
       map: node.position,
       markers: node.markers || [],
+
+      
     }))
 
     viewerRef.current = new Viewer({
       container: containerRef.current,
       adapter: EquirectangularTilesAdapter,
       plugins: [
-        MarkersPlugin,
-        [
+           MarkersPlugin,
+
+        [ 
           VirtualTourPlugin,
           {
             renderMode: '3d',
             preload: true,
             nodes: nodes,
             startNodeId: tourData.nodes[0].id,
+            
+            
           },
         ],
+        
       ],
     })
 
-    const markersPlugin = viewerRef.current.getPlugin(MarkersPlugin)
-
-    // NEW: clicking a marker opens the sidebar with that marker's `data`
-    markersPlugin.addEventListener('select-marker', ({ marker }) => {
+        const markersPlugin = viewerRef.current.getPlugin(MarkersPlugin)
+        markersPlugin.addEventListener('select-marker', ({ marker }) => {
       setSelectedInfo(marker.data || null)
     })
 
     viewerRef.current.addEventListener('click', ({ data }) => {
-      const pos = viewerRef.current.getPosition()
-      console.log(`yaw: ${(pos.yaw * 180 / Math.PI).toFixed(1)}deg, pitch: ${(pos.pitch * 180 / Math.PI).toFixed(1)}deg`)
-    })
+  const pos = viewerRef.current.getPosition()
+  console.log(`yaw: ${(pos.yaw * 180 / Math.PI).toFixed(1)}deg, pitch: ${(pos.pitch * 180 / Math.PI).toFixed(1)}deg`)
+})
+    
 
     return () => {
       viewerRef.current?.destroy()
@@ -76,10 +87,10 @@ export default function TourViewer() {
     }
   }, [])
 
-  return (
+ return (
     <div style={{ width: '100vw', height: '100dvh', position: 'relative' }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
-
+ 
       {/* NEW: sidebar, only rendered when a marker is selected */}
       {selectedInfo && (
         <InfoSidebar info={selectedInfo} onClose={() => setSelectedInfo(null)} />
@@ -124,13 +135,13 @@ function InfoSidebar({ info, onClose }) {
       >
         ×
       </button>
-
+ 
       <h2 style={{ margin: '0 24px 8px 0', fontSize: 18 }}>{info.title}</h2>
-
+ 
       {info.description && (
         <p style={{ fontSize: 14, opacity: 0.85, marginBottom: 16 }}>{info.description}</p>
       )}
-
+ 
       {/* Room-type-specific content: staffroom / classroom carry a teachers list */}
       {Array.isArray(info.teachers) && info.teachers.length > 0 && (
         <div>
@@ -154,7 +165,7 @@ function InfoSidebar({ info, onClose }) {
           </ul>
         </div>
       )}
-
+ 
       {info.contact && (
         <div style={{ marginTop: 16, fontSize: 13, opacity: 0.7 }}>
           Contact: {info.contact}

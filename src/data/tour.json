@@ -2,7 +2,7 @@
   "nodes": [
     {
       "id": "1",
-      "name": "Parking",
+      "name": "1",
       "panorama": {
         "baseUrl": "/tiles/1/base.jpg",
         "tileUrl": "/tiles/1/{col}_{row}.jpg",
@@ -16,7 +16,7 @@
     },
     {
       "id": "2",
-      "name": "Main Entrance",
+      "name": "2",
       "panorama": {
         "baseUrl": "/tiles/2/base.jpg",
         "tileUrl": "/tiles/2/{col}_{row}.jpg",
@@ -45,7 +45,7 @@
     },
     {
       "id": "3",
-      "name": "Corridor",
+      "name": "3",
       "panorama": {
         "baseUrl": "/tiles/3/base.jpg",
         "tileUrl": "/tiles/3/{col}_{row}.jpg",
@@ -60,11 +60,20 @@
         { "nodeId": "24", "position": { "yaw": "0deg", "pitch": "0deg" } }
 
 
-      ]
+      ],
+      "markers": [
+                {
+                    "id": "bin",
+                    "position": { "yaw": "286.8deg", "pitch": "-9.3deg" },
+                    "image": "/icons/bin.png",
+                    "size": { "width": 32, "height": 32 },
+"tooltip": { "content": "Trash bin", "position": "top" }                    
+                }
+            ]
     },
     {
       "id": "4",
-      "name": "Corridor-2",
+      "name": "4",
       
       "panorama": {
         "baseUrl": "/tiles/4/base.jpg",
@@ -81,7 +90,7 @@
     },
     {
       "id": "5",
-      "name": "Corridor-3",
+      "name": "5",
       "northOffset":-40,
       "panorama": {
         "baseUrl": "/tiles/5/base.jpg",
@@ -98,7 +107,7 @@
     },
     {
       "id": "6",
-      "name": "Corridor-4",
+      "name": "6",
       "panorama": {
         "baseUrl": "/tiles/6/base.jpg",
         "tileUrl": "/tiles/6/{col}_{row}.jpg",
@@ -112,7 +121,7 @@
     },
     {
       "id": "7",
-      "name": "Corridor-5",
+      "name": "7",
       "northOffset":30,
 
       "panorama": {
@@ -131,7 +140,7 @@
     },
     {
       "id": "8",
-      "name": "Corridor-6",
+      "name": "8",
 
       "panorama": {
         "baseUrl": "/tiles/8/base.jpg",
@@ -148,7 +157,7 @@
     },
     {
       "id": "9",
-      "name": "stairs",
+      "name": "9",
 
       "panorama": {
         "baseUrl": "/tiles/9/base.jpg",
@@ -166,7 +175,7 @@
     },
     {
       "id": "10",
-      "name": "Corridor",
+      "name": "10",
 
       "panorama": {
         "baseUrl": "/tiles/10/base.jpg",
@@ -184,7 +193,7 @@
     },
     {
       "id": "11",
-      "name": "Corridor",
+      "name": "11",
 
       "panorama": {
         "baseUrl": "/tiles/11/base.jpg",
@@ -202,7 +211,7 @@
     },
     {
       "id": "12",
-      "name": "Corridor",
+      "name": "12",
       "northOffset": 10,
       "panorama": {
         "baseUrl": "/tiles/12/base.jpg",
@@ -225,7 +234,7 @@
     },
     {
       "id": "13",
-      "name": "Corridor",
+      "name": "13",
       "northOffset":-15,
       "panorama": {
         "baseUrl": "/tiles/13/base.jpg",
@@ -243,7 +252,7 @@
     },
     {
       "id": "14",
-      "name": "Corridor",
+      "name": "14",
 
       "panorama": {
         "baseUrl": "/tiles/14/base.jpg",
@@ -259,7 +268,7 @@
     },
     {
       "id": "24",
-      "name": "Corridor",
+      "name": "24",
 
       "panorama": {
         "baseUrl": "/tiles/24/base.jpg",
@@ -277,7 +286,7 @@
     },
     {
       "id": "25",
-      "name": "Corridor",
+      "name": "25",
 
       "panorama": {
         "baseUrl": "/tiles/25/base.jpg",
@@ -295,7 +304,7 @@
     },
     {
       "id": "26",
-      "name": "Corridor",
+      "name": "26",
 
       "panorama": {
         "baseUrl": "/tiles/26/base.jpg",
@@ -314,7 +323,7 @@
     },
     {
       "id": "17",
-      "name": "Corridor",
+      "name": "17",
 
       "panorama": {
         "baseUrl": "/tiles/17/base.jpg",
